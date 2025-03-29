@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit and remove in DOM</title>
+</head>
+<body style="background-color: black;color: white;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').
+        appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+
+
+    function addOptilang(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+
+    }
+    addOptilang('golang')
+
+    //EDIT
+    const secondlang =document.querySelector("li:nth-child(2)")
+    console.log(secondlang)
+    secondlang.textContent = "Python"// one way to edit 
+    secondlang.innerHTML = "tython"// another way to edit
+    const newli= document.createElement('li')
+    newli.textContent= 'mojo'
+    secondlang.replaceWith(newli)//way to replace
+
+    //edit 
+    const firstlang = document.querySelector("li:nth-child(1)")
+    firstlang.outerHTML = "<li>TypeScript</li>"
+
+    //remove
+    const lastlang = document.querySelector("li:last-child")
+    lastlang.remove()
+</script>
+
+</html>
