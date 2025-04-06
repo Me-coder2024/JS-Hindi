@@ -12,25 +12,30 @@ Here's the **Table of Contents** for the **README.md** file, covering all chapte
 
 ## 📖 Table of Contents  
 
-1. [Introduction](#-chapter-1-introduction)  
-2. [Basics](#-chapter-2-basics)  
-3. [Type Conversion & Operators](#-chapter-3-conversion-operators)  
-4. [Comparisons](#-chapter-4-comparisons)  
-5. [Memory Management](#-chapter-5-memory-management)  
-6. [Strings](#-chapter-6-strings)  
-7. [Numbers & Math](#-chapter-7-numbers--math)  
-8. [Dates](#-chapter-8-dates)  
-9. [Arrays](#-chapter-9-arrays)  
-10. [Objects](#-chapter-10-objects)  
-11. [Functions](#-chapter-11-functions)  
-12. [Scopes](#-chapter-12-scopes)  
-13. [Arrow Functions](#-chapter-13-arrow-functions)  
-14. [Immediately Invoked Function Expressions (IIFE)](#-chapter-14-iife)  
-15. [Control Flow](#-chapter-15-control-flow)  
-16. [Switch Statements](#-chapter-16-switch-statements)  
-17. [Truthy & Falsy Values](#-chapter-17-truthy--falsy-values)  
-18. [Loops (For, While, Do-While)](#-chapter-18-loops)  
-19. [📌 Data Type Summary](#-data-type-summary)
+1. [📘 Chapter 1: Introduction](#-chapter-1-introduction)  
+2. [⚙️ Chapter 2: Basics](#-chapter-2-basics)  
+3. [🔁 Chapter 3: Conversion & Operators](#-chapter-3-conversion--operators)  
+4. [🧮 Chapter 4: Comparisons](#-chapter-4-comparisons)  
+5. [🧠 Chapter 5: Memory Management](#-chapter-5-memory-management)  
+6. [📝 Chapter 6: Strings](#-chapter-6-strings)  
+7. [🔢 Chapter 7: Numbers & Math](#-chapter-7-numbers--math)  
+8. [📆 Chapter 8: Dates](#-chapter-8-dates)  
+9. [📚 Chapter 9: Arrays](#-chapter-9-arrays)  
+10. [🧱 Chapter 10: Objects](#-chapter-10-objects)  
+11. [🔄 Chapter 11: Functions](#-chapter-11-functions)  
+12. [📌 Data Type Summary](#-data-type-summary)  
+13. [📦 Chapter 12: Scope](#-chapter-12-scope)  
+14. [🏹 Chapter 13: Arrow Functions](#-chapter-13-arrow-functions)  
+15. [⚡ Chapter 14: IIFE (Immediately Invoked Function Expression)](#-chapter-14-iife-immediately-invoked-function-expression)  
+16. [🧭 Chapter 15: Control Flow](#-chapter-15-control-flow)  
+17. [🔀 Chapter 16: Switch Statements](#-chapter-16-switch-statements)  
+18. [✅ Chapter 17: Truthy & Falsy](#-chapter-17-truthy--falsy)  
+19. [🔁 Chapter 18: Loops - For, While, Do-While](#-chapter-18-loops---for-while-do-while)  
+20. [🌀 Chapter 19: Array Iteration (forEach, map, filter)](#-chapter-19-array-iteration-foreach-map-filter)  
+21. [🔃 Chapter 20: Array Looping](#-chapter-20-array-looping)  
+22. [➕ Chapter 21: Reduce Method](#-chapter-21-reduce-method)  
+23. [🌐 Chapter 22: DOM Introduction](#-chapter-22-dom-introduction)  
+24. [📡 Chapter 23: API - Fetch and JSON](#-chapter-23-api---fetch-and-json)  
 
 ---
 
@@ -494,7 +499,132 @@ fruits.forEach(fruit => console.log(fruit));
 
 ---
 
-🚀 **Happy Coding!**
+## 📘 JavaScript Notes (Chapters 19-24)
+
+### 🔥 Chapter 19: DOM (Document Object Model)
+
+#### 📌 Introduction
+The DOM represents the HTML structure of a web page as a tree of objects. JavaScript can access and modify these elements using DOM APIs, enabling dynamic interactions.
+
+#### ✨ Accessing Elements
+- `document.getElementById('id')`
+- `document.querySelector('.class')`
+- `document.querySelectorAll('tag')`
+
+```javascript
+const title = document.getElementById("main-title");
+const buttons = document.querySelectorAll(".btn");
+```
+
+#### 🧠 Manipulating Elements
+- **Text Content**: `element.textContent`, `element.innerText`
+- **HTML Content**: `element.innerHTML`
+- **Style**: `element.style.color = "blue";`
+
+```javascript
+title.textContent = "Updated Title";
+buttons[0].style.backgroundColor = "red";
+```
+
+#### ⚙️ Event Listeners
+- Events like `click`, `mouseover`, etc., allow interactivity.
+
+```javascript
+buttons[1].addEventListener("click", () => {
+  alert("Button Clicked!");
+});
+```
+
+> 🧩 The DOM is the backbone of front-end interactivity, letting developers create dynamic, responsive UIs.
+
+---
+
+### 🔁 Chapter 20: Array Loops
+
+#### 📌 Overview
+JavaScript provides multiple looping methods for arrays to perform iterations and transformations.
+
+#### 🔄 `forEach()`
+Used for executing a function on each element (no return).
+
+```javascript
+const nums = [1, 2, 3];
+nums.forEach((num) => console.log(num));
+```
+
+#### 🔍 `map()`
+Returns a new array after transforming each element.
+
+```javascript
+const squared = nums.map((n) => n * n); // [1, 4, 9]
+```
+
+#### 📋 `filter()`
+Filters elements based on a condition.
+
+```javascript
+const even = nums.filter((n) => n % 2 === 0); // [2]
+```
+
+#### 🎯 `find()`
+Returns the first element that matches a condition.
+
+```javascript
+const found = nums.find((n) => n > 2); // 3
+```
+
+---
+
+### ➕ Chapter 21: `reduce()`
+
+#### 📌 Purpose
+The `reduce()` method executes a reducer function on each element of the array, resulting in a single output value.
+
+```javascript
+const numbers = [1, 2, 3, 4];
+const total = numbers.reduce((acc, curr) => acc + curr, 0);
+console.log(total); // 10
+```
+
+- `acc`: Accumulator (initially set to 0 in the example)
+- `curr`: Current element being processed
+
+> ✨ Best for aggregating values like sums, averages, or complex objects.
+
+---
+
+### 🌐 Chapter 22: API Basics (Fetch API)
+
+#### 📌 What is an API?
+An API allows you to fetch data from a server (backend or third-party) using JavaScript.
+
+#### 🌍 Using `fetch()`
+
+```javascript
+fetch("https://jsonplaceholder.typicode.com/posts")
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+```
+
+- `fetch()` is promise-based.
+- First `.then()` gets the raw response.
+- Second `.then()` extracts JSON data.
+
+#### ⚠️ Error Handling
+
+```javascript
+fetch("invalid_url")
+  .then((res) => res.json())
+  .catch((err) => console.error("Error:", err));
+```
+
+> 🧩 APIs bridge frontend apps with external data sources.
+
+---
+
+_This documentation is inspired by MDN Web Docs and designed for effective and clean learning._
+
+
 
 
 
