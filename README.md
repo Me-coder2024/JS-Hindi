@@ -501,7 +501,7 @@ fruits.forEach(fruit => console.log(fruit));
 
 ## 📘 JavaScript Notes (Chapters 19-24)
 
-### 🔥 Chapter 19: DOM (Document Object Model)
+## 🔥 Chapter 19: DOM (Document Object Model)
 
 #### 📌 Introduction
 The DOM represents the HTML structure of a web page as a tree of objects. JavaScript can access and modify these elements using DOM APIs, enabling dynamic interactions.
@@ -539,7 +539,7 @@ buttons[1].addEventListener("click", () => {
 
 ---
 
-### 🔁 Chapter 20: Array Loops
+## 🔁 Chapter 20: Array Loops
 
 #### 📌 Overview
 JavaScript provides multiple looping methods for arrays to perform iterations and transformations.
@@ -575,7 +575,7 @@ const found = nums.find((n) => n > 2); // 3
 
 ---
 
-### ➕ Chapter 21: `reduce()`
+## ➕ Chapter 21: `reduce()`
 
 #### 📌 Purpose
 The `reduce()` method executes a reducer function on each element of the array, resulting in a single output value.
@@ -593,7 +593,7 @@ console.log(total); // 10
 
 ---
 
-### 🌐 Chapter 22: API Basics (Fetch API)
+## 🌐 Chapter 22: API Basics (Fetch API)
 
 #### 📌 What is an API?
 An API allows you to fetch data from a server (backend or third-party) using JavaScript.
